@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F06A7AD1E8B375E00431B9E /* Presidents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06A7AC1E8B375E00431B9E /* Presidents.swift */; };
+		4F06A7AF1E8DDC7000431B9E /* Presidents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F06A7AE1E8DDC7000431B9E /* Presidents.plist */; };
 		4FCBAA461E8B36FF005324BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBAA451E8B36FF005324BF /* AppDelegate.swift */; };
 		4FCBAA481E8B36FF005324BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBAA471E8B36FF005324BF /* ViewController.swift */; };
 		4FCBAA4B1E8B36FF005324BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FCBAA491E8B36FF005324BF /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F06A7AC1E8B375E00431B9E /* Presidents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Presidents.swift; path = ../Presidents.swift; sourceTree = "<group>"; };
+		4F06A7AE1E8DDC7000431B9E /* Presidents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Presidents.plist; sourceTree = "<group>"; };
 		4FCBAA421E8B36FF005324BF /* Presidential Orders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Presidential Orders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCBAA451E8B36FF005324BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FCBAA471E8B36FF005324BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,10 +60,12 @@
 			children = (
 				4FCBAA451E8B36FF005324BF /* AppDelegate.swift */,
 				4FCBAA471E8B36FF005324BF /* ViewController.swift */,
+				4F06A7AC1E8B375E00431B9E /* Presidents.swift */,
 				4FCBAA491E8B36FF005324BF /* Main.storyboard */,
 				4FCBAA4C1E8B36FF005324BF /* Assets.xcassets */,
 				4FCBAA4E1E8B36FF005324BF /* LaunchScreen.storyboard */,
 				4FCBAA511E8B36FF005324BF /* Info.plist */,
+				4F06A7AE1E8DDC7000431B9E /* Presidents.plist */,
 			);
 			path = "Presidential Orders";
 			sourceTree = "<group>";
@@ -127,6 +133,7 @@
 				4FCBAA501E8B36FF005324BF /* LaunchScreen.storyboard in Resources */,
 				4FCBAA4D1E8B36FF005324BF /* Assets.xcassets in Resources */,
 				4FCBAA4B1E8B36FF005324BF /* Main.storyboard in Resources */,
+				4F06A7AF1E8DDC7000431B9E /* Presidents.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FCBAA481E8B36FF005324BF /* ViewController.swift in Sources */,
+				4F06A7AD1E8B375E00431B9E /* Presidents.swift in Sources */,
 				4FCBAA461E8B36FF005324BF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +308,7 @@
 				4FCBAA561E8B36FF005324BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
