@@ -188,6 +188,7 @@
                         <outlet property="Field2" destination="yqI-B8-0t4" id="4u8-xe-yr4"/>
                         <outlet property="Field3" destination="Vme-GP-ej8" id="9Yf-A1-bRB"/>
                         <outlet property="Field4" destination="QaY-eq-TiP" id="cFY-A2-gk7"/>
+                        <outlet property="bottomButton" destination="iKk-ym-1Xl" id="bqf-r0-ohA"/>
                     </connections>
                 </viewController>
             </objects>

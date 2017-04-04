@@ -15,8 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var Field2: UILabel!
     @IBOutlet weak var Field3: UILabel!
     @IBOutlet weak var Field4: UILabel!
+    @IBOutlet weak var bottomButton: UIButton!
 
-
+    var round = 1
+    var score = 0
     var president1 = workingSet.0
     var president2 = workingSet.1
     var president3 = workingSet.2
@@ -26,7 +28,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        
+        bottomButton.isHidden = true
         Field1.text = president1.name
         Field2.text = president2.name
         Field3.text = president3.name
@@ -98,26 +100,34 @@ class ViewController: UIViewController {
         if president1.inauguration < president2.inauguration && president2.inauguration < president3.inauguration && president3.inauguration < president4.inauguration {
             
             winLose = true
+            score += 1
+            print("You win!")
         } else {
             winLose = false
+            print("You lose!")
         }
         
         return winLose
     }
     
+    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+        
+        if checkAnswers() == true {
+            bottomButton.setImage(#imageLiteral(resourceName: "next_round_success"), for: UIControlState.normal)
+            bottomButton.isHidden = false
+        }
+        else {
+            bottomButton.setImage(#imageLiteral(resourceName: "next_round_fail"), for: UIControlState.normal)
+            bottomButton.isHidden = false
+        }
+    }
     
     
     // Bottom portion: Timer, Play Again, Score
     
     @IBAction func playAgain(_ sender: Any) {
-        
-        if checkAnswers() == true {
-            print("You win!")
-        } else {
-            print("You lose!")
-        }
-        
         workingSet = NewSet()
+        bottomButton.isHidden = true
         president1 = workingSet.0
         president2 = workingSet.1
         president3 = workingSet.2
