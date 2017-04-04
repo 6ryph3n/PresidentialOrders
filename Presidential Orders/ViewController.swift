@@ -34,6 +34,25 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Up and Down Buttons
+    
+    @IBAction func field1_down(_ sender: Any) {
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // Bottom portion: Timer, Play Again, Score
+    
     @IBAction func playAgain(_ sender: Any) {
         workingSet = NewSet()
         
@@ -42,6 +61,7 @@ class ViewController: UIViewController {
         Field3.text = workingSet.2.name
         Field4.text = workingSet.3.name
     }
+        
     
 }
 
