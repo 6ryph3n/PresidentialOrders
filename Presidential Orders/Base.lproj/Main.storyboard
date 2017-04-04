@@ -72,12 +72,18 @@
                                                         <state key="normal" image="up_half"/>
                                                         <state key="selected" image="up_half_selected"/>
                                                         <state key="highlighted" image="up_half_selected"/>
+                                                        <connections>
+                                                            <action selector="field2_up:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5gl-Zx-9s9"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ8-Iw-Tcc">
                                                         <rect key="frame" x="0.0" y="52.5" width="50" height="53"/>
                                                         <state key="normal" image="down_half"/>
                                                         <state key="selected" image="down_half_selected"/>
                                                         <state key="highlighted" image="down_half_selected"/>
+                                                        <connections>
+                                                            <action selector="field2_down:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mhq-Ic-mBa"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -104,12 +110,18 @@
                                                         <state key="normal" image="up_half"/>
                                                         <state key="selected" image="up_half_selected"/>
                                                         <state key="highlighted" image="up_half_selected"/>
+                                                        <connections>
+                                                            <action selector="field3_up:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mvm-qc-0ud"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dj-ux-J2S">
                                                         <rect key="frame" x="0.0" y="53" width="50" height="53"/>
                                                         <state key="normal" image="down_half"/>
                                                         <state key="selected" image="down_half_selected"/>
                                                         <state key="highlighted" image="down_half_selected"/>
+                                                        <connections>
+                                                            <action selector="field3_down:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3gO-xl-D9k"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -136,6 +148,9 @@
                                                         <state key="normal" title="Button" image="up_full"/>
                                                         <state key="selected" image="up_full_selected"/>
                                                         <state key="highlighted" image="up_full_selected"/>
+                                                        <connections>
+                                                            <action selector="field4_up:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KUj-vE-ALQ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>

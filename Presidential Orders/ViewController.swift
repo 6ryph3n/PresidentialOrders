@@ -37,13 +37,40 @@ class ViewController: UIViewController {
     // Up and Down Buttons
     
     @IBAction func field1_down(_ sender: Any) {
-        
+        let transferPlaceholder = Field2.text
+        Field2.text = Field1.text
+        Field1.text = transferPlaceholder
     }
     
+    @IBAction func field2_up(_ sender: Any) {
+        let transferPlaceholder = Field1.text
+        Field1.text = Field2.text
+        Field2.text = transferPlaceholder
+    }
     
+    @IBAction func field2_down(_ sender: Any) {
+        let transferPlaceholder = Field3.text
+        Field3.text = Field2.text
+        Field2.text = transferPlaceholder
+    }
     
+    @IBAction func field3_up(_ sender: Any) {
+        let transferPlaceholder = Field2.text
+        Field2.text = Field3.text
+        Field3.text = transferPlaceholder
+    }
     
+    @IBAction func field3_down(_ sender: Any) {
+        let transferPlaceholder = Field4.text
+        Field4.text = Field3.text
+        Field3.text = transferPlaceholder
+    }
     
+    @IBAction func field4_up(_ sender: Any) {
+        let transferPlaceholder = Field3.text
+        Field3.text = Field4.text
+        Field4.text = transferPlaceholder
+    }
     
     
     
