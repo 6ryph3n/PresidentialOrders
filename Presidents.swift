@@ -65,22 +65,31 @@ func PresidentProvider() -> President {
 
 func NewSet() -> (President, President, President, President) {
     
-    
     var president1 = PresidentProvider()
     var president2 = PresidentProvider()
     var president3 = PresidentProvider()
     var president4 = PresidentProvider()
     
+    
     if president2.name == president1.name {
         president2 = PresidentProvider()
+        if president2.name == president1.name {
+            president2 = PresidentProvider()
+        }
     }
     
     if president3.name == president1.name || president3.name == president2.name {
         president3 = PresidentProvider()
+        if president3.name == president1.name || president3.name == president2.name {
+            president3 = PresidentProvider()
+        }
     }
     
     if president4.name == president1.name || president4.name == president2.name  || president4.name == president3.name {
         president4 = PresidentProvider()
+        if president4.name == president1.name || president4.name == president2.name  || president4.name == president3.name {
+            president4 = PresidentProvider()
+        }
     }
     
     
