@@ -8,11 +8,7 @@
 
 import UIKit
 
-var workingSet = NewSet()
-var president1 = workingSet.0
-var president2 = workingSet.1
-var president3 = workingSet.2
-var president4 = workingSet.3
+    var workingSet = NewSet()
 
 class ViewController: UIViewController {
     @IBOutlet weak var Field1: UILabel!
@@ -21,6 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var Field4: UILabel!
 
 
+    var president1 = workingSet.0
+    var president2 = workingSet.1
+    var president3 = workingSet.2
+    var president4 = workingSet.3
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,21 +91,42 @@ class ViewController: UIViewController {
         Field4.text = president4.name
     }
     
-    
-    
-    
+    // Check answers
+    func checkAnswers() -> Bool {
+        var winLose: Bool
+        
+        if president1.inauguration < president2.inauguration && president2.inauguration < president3.inauguration && president3.inauguration < president4.inauguration {
+            
+            winLose = true
+        } else {
+            winLose = false
+        }
+        
+        return winLose
+    }
     
     
     
     // Bottom portion: Timer, Play Again, Score
     
     @IBAction func playAgain(_ sender: Any) {
-        workingSet = NewSet()
         
-        Field1.text = workingSet.0.name
-        Field2.text = workingSet.1.name
-        Field3.text = workingSet.2.name
-        Field4.text = workingSet.3.name
+        if checkAnswers() == true {
+            print("You win!")
+        } else {
+            print("You lose!")
+        }
+        
+        workingSet = NewSet()
+        president1 = workingSet.0
+        president2 = workingSet.1
+        president3 = workingSet.2
+        president4 = workingSet.3
+        
+        Field1.text = president1.name
+        Field2.text = president2.name
+        Field3.text = president3.name
+        Field4.text = president4.name
     }
         
     
