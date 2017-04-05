@@ -227,7 +227,7 @@
                                 </constraints>
                                 <state key="normal" image="play_again"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="K1a-GY-rjb"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="playAgainSegue" id="K1a-GY-rjb"/>
                                 </connections>
                             </button>
                         </subviews>

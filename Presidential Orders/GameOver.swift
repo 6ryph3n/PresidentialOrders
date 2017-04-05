@@ -7,14 +7,10 @@
 //
 
 import UIKit
-
 class GameOver: UIViewController {
     @IBOutlet weak var finalScore: UILabel!
-    var displayScore = "0"
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        finalScore.text = "Game Over. Your score is."
         // Do any additional setup after loading the view.
     }
     

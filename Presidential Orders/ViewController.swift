@@ -125,8 +125,11 @@ class ViewController: UIViewController {
     
     @IBAction func nextRound(_ sender: Any) {
         if round >= 6 {
-            func prepare(for: GameOver, sender: Any?) {
-                let displayScore = "\(score) / \(round)"
+            let displayScore = "\(score) / \(round)"
+            func prepare(for segue: GameOver, sender: Any?) {
+                let secondVC = GameOver()
+                secondVC.finalScore.text = displayScore
+                
                 round = 1
                 score = 0
             }
@@ -148,7 +151,7 @@ class ViewController: UIViewController {
             Field4.text = president4.name
         }
 
-    }        
+    }
     
 }
 
