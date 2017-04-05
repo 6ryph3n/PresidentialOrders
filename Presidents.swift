@@ -71,25 +71,16 @@ func NewSet() -> (President, President, President, President) {
     var president4 = PresidentProvider()
     
     
-    if president2.name == president1.name {
+    while president2.name == president1.name {
         president2 = PresidentProvider()
-        if president2.name == president1.name {
-            president2 = PresidentProvider()
-        }
     }
     
-    if president3.name == president1.name || president3.name == president2.name {
+    while president3.name == president1.name || president3.name == president2.name {
         president3 = PresidentProvider()
-        if president3.name == president1.name || president3.name == president2.name {
-            president3 = PresidentProvider()
-        }
     }
     
-    if president4.name == president1.name || president4.name == president2.name  || president4.name == president3.name {
+    while president4.name == president1.name || president4.name == president2.name  || president4.name == president3.name {
         president4 = PresidentProvider()
-        if president4.name == president1.name || president4.name == president2.name  || president4.name == president3.name {
-            president4 = PresidentProvider()
-        }
     }
     
     
