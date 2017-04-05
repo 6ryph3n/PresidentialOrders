@@ -101,10 +101,8 @@ class ViewController: UIViewController {
             
             winLose = true
             score += 1
-            print("You win!")
         } else {
             winLose = false
-            print("You lose!")
         }
         
         return winLose
@@ -125,9 +123,16 @@ class ViewController: UIViewController {
     
     // Bottom portion: Timer, Play Again, Score
     
-    @IBAction func playAgain(_ sender: Any) {
+    @IBAction func nextRound(_ sender: Any) {
         if round >= 6 {
-            print("Game Over. Your score is \(score) / \(round).")
+            func prepare(for: GameOver, sender: Any?) {
+                let displayScore = "\(score) / \(round)"
+                round = 1
+                score = 0
+            }
+            
+            
+            self.performSegue(withIdentifier: "gameOverSegue", sender: sender)
         } else {
             workingSet = NewSet()
             round += 1
@@ -142,10 +147,8 @@ class ViewController: UIViewController {
             Field3.text = president3.name
             Field4.text = president4.name
         }
-        
 
-    }
-        
+    }        
     
 }
 
