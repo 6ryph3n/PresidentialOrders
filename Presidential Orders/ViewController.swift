@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var Field3: UILabel!
     @IBOutlet weak var Field4: UILabel!
     @IBOutlet weak var bottomButton: UIButton!
+    @IBOutlet weak var timerLabel: UILabel!
 
     var round = 1
     var score = 0
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        timerPlay(self)
         bottomButton.isHidden = true
         Field1.text = president1.name
         Field2.text = president2.name
@@ -113,12 +114,15 @@ class ViewController: UIViewController {
         if checkAnswers() == true {
             bottomButton.setImage(#imageLiteral(resourceName: "next_round_success"), for: UIControlState.normal)
             bottomButton.isHidden = false
+            timerLabel.isHidden = true
         }
         else {
             bottomButton.setImage(#imageLiteral(resourceName: "next_round_fail"), for: UIControlState.normal)
             bottomButton.isHidden = false
+            timerLabel.isHidden = true
         }
     }
+    
     
     
     // Bottom portion: Timer, Play Again, Score
@@ -129,14 +133,15 @@ class ViewController: UIViewController {
             func prepare(for segue: GameOver, sender: Any?) {
                 let secondVC = GameOver()
                 secondVC.finalScore.text = displayScore
-                
-                round = 1
-                score = 0
             }
-            
+            round = 1
+            score = 0
             
             self.performSegue(withIdentifier: "gameOverSegue", sender: sender)
         } else {
+            time = 60
+            timerLabel.isHidden = false
+            timerPlay(self)
             workingSet = NewSet()
             round += 1
             bottomButton.isHidden = true
@@ -151,6 +156,35 @@ class ViewController: UIViewController {
             Field4.text = president4.name
         }
 
+    }
+    
+    
+    
+    //// Timer
+    
+    var timer = Timer()
+    var time = 60
+    func decreaseTimer() {
+        if time > 0 {
+            time -= 1
+            timerLabel.text = String(time)
+        } else {
+            timer.invalidate()
+            timerLabel.isHidden = true
+            if checkAnswers() == true {
+                bottomButton.setImage(#imageLiteral(resourceName: "next_round_success"), for: UIControlState.normal)
+                bottomButton.isHidden = false
+            }
+            else {
+                bottomButton.setImage(#imageLiteral(resourceName: "next_round_fail"), for: UIControlState.normal)
+                bottomButton.isHidden = false
+            }
+        }
+    }
+    
+    @IBAction func timerPlay(_ sender: AnyObject) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.decreaseTimer), userInfo: nil, repeats: true)
+        
     }
     
 }

@@ -170,13 +170,23 @@
                                     <action selector="nextRound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="biA-pF-ZWw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuR-Gg-dFN">
+                                <rect key="frame" x="24" y="658" width="366" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.047647275030612946" green="0.16374623775482178" blue="0.29359248280525208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="nuR-Gg-dFN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="1YV-4H-NwV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nuR-Gg-dFN" secondAttribute="bottom" constant="28" id="2e9-FF-XKh"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iKk-ym-1Xl" secondAttribute="bottom" constant="28" id="9EA-bA-9QX"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XPX-CH-6Yp" secondAttribute="bottom" constant="102" id="EOh-GK-CSX"/>
                             <constraint firstItem="XPX-CH-6Yp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="T73-ij-Ruc"/>
                             <constraint firstItem="iKk-ym-1Xl" firstAttribute="top" secondItem="XPX-CH-6Yp" secondAttribute="bottom" constant="24" id="V1x-SA-vfA"/>
+                            <constraint firstItem="nuR-Gg-dFN" firstAttribute="top" secondItem="XPX-CH-6Yp" secondAttribute="bottom" constant="24" id="XXx-tZ-yVL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nuR-Gg-dFN" secondAttribute="trailing" constant="4" id="ano-do-O8j"/>
                             <constraint firstItem="XPX-CH-6Yp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="roW-CV-dM0"/>
                             <constraint firstItem="iKk-ym-1Xl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s7O-KG-YOM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XPX-CH-6Yp" secondAttribute="trailing" constant="4" id="zS3-UM-7dW"/>
@@ -188,6 +198,7 @@
                         <outlet property="Field3" destination="Vme-GP-ej8" id="9Yf-A1-bRB"/>
                         <outlet property="Field4" destination="QaY-eq-TiP" id="cFY-A2-gk7"/>
                         <outlet property="bottomButton" destination="iKk-ym-1Xl" id="bqf-r0-ohA"/>
+                        <outlet property="timerLabel" destination="nuR-Gg-dFN" id="TcA-kh-Ygl"/>
                         <segue destination="6gZ-ed-I8e" kind="presentation" identifier="gameOverSegue" id="2dr-ek-QmC"/>
                     </connections>
                 </viewController>
