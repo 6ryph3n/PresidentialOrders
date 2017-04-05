@@ -126,17 +126,24 @@ class ViewController: UIViewController {
     // Bottom portion: Timer, Play Again, Score
     
     @IBAction func playAgain(_ sender: Any) {
-        workingSet = NewSet()
-        bottomButton.isHidden = true
-        president1 = workingSet.0
-        president2 = workingSet.1
-        president3 = workingSet.2
-        president4 = workingSet.3
+        if round >= 6 {
+            print("Game Over. Your score is \(score) / \(round).")
+        } else {
+            workingSet = NewSet()
+            round += 1
+            bottomButton.isHidden = true
+            president1 = workingSet.0
+            president2 = workingSet.1
+            president3 = workingSet.2
+            president4 = workingSet.3
+            
+            Field1.text = president1.name
+            Field2.text = president2.name
+            Field3.text = president3.name
+            Field4.text = president4.name
+        }
         
-        Field1.text = president1.name
-        Field2.text = president2.name
-        Field3.text = president3.name
-        Field4.text = president4.name
+
     }
         
     
