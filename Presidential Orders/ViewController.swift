@@ -137,6 +137,9 @@ class ViewController: UIViewController {
             
             self.performSegue(withIdentifier: "gameOverSegue", sender: sender)
         } else {
+            if timer.isValid {
+                timer.invalidate()
+            }
             time = 60
             timerLabel.isHidden = false
             timerPlay(self)
@@ -155,6 +158,8 @@ class ViewController: UIViewController {
         }
 
     }
+    
+    // Transfer score to second view controller
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let newView = segue.destination as! GameOver
