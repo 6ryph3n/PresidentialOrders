@@ -9,6 +9,7 @@
 import UIKit
 
     var workingSet = NewSet()
+    var displayScore = ""
 
 class ViewController: UIViewController {
     @IBOutlet weak var Field1: UILabel!
@@ -129,11 +130,8 @@ class ViewController: UIViewController {
     
     @IBAction func nextRound(_ sender: Any) {
         if round >= 6 {
-            let displayScore = "\(score) / \(round)"
-            func prepare(for segue: GameOver, sender: Any?) {
-                let secondVC = GameOver()
-                secondVC.finalScore.text = displayScore
-            }
+            displayScore = "\(score) / \(round)"
+
             round = 1
             score = 0
             
@@ -156,6 +154,14 @@ class ViewController: UIViewController {
             Field4.text = president4.name
         }
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let newView = segue.destination as! GameOver
+        
+        newView.text = displayScore
+        
+        
     }
     
     

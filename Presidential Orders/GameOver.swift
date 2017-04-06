@@ -8,10 +8,13 @@
 
 import UIKit
 class GameOver: UIViewController {
+    var text: String = ""
     @IBOutlet weak var finalScore: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        finalScore.text = text
     }
     
 
