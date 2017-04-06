@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F06A7AD1E8B375E00431B9E /* Presidents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06A7AC1E8B375E00431B9E /* Presidents.swift */; };
+		4F20B0101E96C5DF007F2D19 /* LearnMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F20B00F1E96C5DF007F2D19 /* LearnMore.swift */; };
 		4F801E451E94903300551610 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F801E441E94903300551610 /* GameOver.swift */; };
 		4FCBAA461E8B36FF005324BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBAA451E8B36FF005324BF /* AppDelegate.swift */; };
 		4FCBAA481E8B36FF005324BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBAA471E8B36FF005324BF /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		4F06A7AC1E8B375E00431B9E /* Presidents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Presidents.swift; path = ../Presidents.swift; sourceTree = "<group>"; };
+		4F20B00F1E96C5DF007F2D19 /* LearnMore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LearnMore.swift; path = ../LearnMore.swift; sourceTree = "<group>"; };
 		4F801E441E94903300551610 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		4FCBAA421E8B36FF005324BF /* Presidential Orders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Presidential Orders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCBAA451E8B36FF005324BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				4FCBAA451E8B36FF005324BF /* AppDelegate.swift */,
 				4FCBAA471E8B36FF005324BF /* ViewController.swift */,
 				4F801E441E94903300551610 /* GameOver.swift */,
+				4F20B00F1E96C5DF007F2D19 /* LearnMore.swift */,
 				4F06A7AC1E8B375E00431B9E /* Presidents.swift */,
 				4FCBAA491E8B36FF005324BF /* Main.storyboard */,
 				4FCBAA4C1E8B36FF005324BF /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 				4FCBAA481E8B36FF005324BF /* ViewController.swift in Sources */,
 				4F06A7AD1E8B375E00431B9E /* Presidents.swift in Sources */,
 				4FCBAA461E8B36FF005324BF /* AppDelegate.swift in Sources */,
+				4F20B0101E96C5DF007F2D19 /* LearnMore.swift in Sources */,
 				4F801E451E94903300551610 /* GameOver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
