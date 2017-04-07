@@ -8,8 +8,10 @@
 
 import UIKit
 
-    var workingSet = NewSet()
-    var displayScore = ""
+    var workingSet = NewSet() // Contains the four randomly selected presidents
+    var displayScore = "" // Will contain the final score at the end of six rounds. Segued to GameOver.
+    var learnMoreLink = "" // Contains the URL that will be segued to LearnMore view. Set when a president's name is tapped.
+    var selectLink = "" // Informs the prepare() function which segue to perform
 
 class ViewController: UIViewController {
     @IBOutlet weak var Field1: UILabel!
@@ -18,34 +20,61 @@ class ViewController: UIViewController {
     @IBOutlet weak var Field4: UILabel!
     @IBOutlet weak var bottomButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var labelOneButton: UIButton!
+    @IBOutlet weak var labelTwoButton: UIButton!
+    @IBOutlet weak var labelThreeButton: UIButton!
+    @IBOutlet weak var labelFourButton: UIButton!
+    @IBOutlet weak var bottomNote: UILabel!
 
+    // Keeping track of the score and current round
     var round = 1
     var score = 0
+    
+    // Breaks down workingSet() into a more readable format
     var president1 = workingSet.0
     var president2 = workingSet.1
     var president3 = workingSet.2
     var president4 = workingSet.3
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        timerPlay(self)
-        bottomButton.isHidden = true
+    
+    func setFieldText() {
         Field1.text = president1.name
         Field2.text = president2.name
         Field3.text = president3.name
         Field4.text = president4.name
-        
     }
     
+    func hideLabelButtons() {
+        labelOneButton.isHidden = true
+        labelTwoButton.isHidden = true
+        labelThreeButton.isHidden = true
+        labelFourButton.isHidden = true
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        timerPlay(self) // Start the timer
+        bottomButton.isHidden = true // "Next Round" button is hidden
+        setFieldText()
+        hideLabelButtons()
+        bottomNote.text = "Shake phone to check answers"
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    // Up and Down Buttons
     
+    
+    
+    
+    
+    
+    
+    
+    // Up and Down Buttons
     @IBAction func field1_down(_ sender: Any) {
         
         let transferPlaceholder = president2
@@ -95,6 +124,11 @@ class ViewController: UIViewController {
         Field4.text = president4.name
     }
     
+    
+    
+    
+    
+    
     // Check answers
     func checkAnswers() -> Bool {
         var winLose: Bool
@@ -112,15 +146,20 @@ class ViewController: UIViewController {
     
     override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
         
+        bottomNote.text = "Tap a name to learn more"
+        bottomButton.isHidden = false
+        timerLabel.isHidden = true
+        
+        labelOneButton.isHidden = false
+        labelTwoButton.isHidden = false
+        labelThreeButton.isHidden = false
+        labelFourButton.isHidden = false
+        
         if checkAnswers() == true {
             bottomButton.setImage(#imageLiteral(resourceName: "next_round_success"), for: UIControlState.normal)
-            bottomButton.isHidden = false
-            timerLabel.isHidden = true
         }
         else {
             bottomButton.setImage(#imageLiteral(resourceName: "next_round_fail"), for: UIControlState.normal)
-            bottomButton.isHidden = false
-            timerLabel.isHidden = true
         }
     }
     
@@ -135,8 +174,11 @@ class ViewController: UIViewController {
             round = 1
             score = 0
             
+            selectLink = "Game Over"
+            
             self.performSegue(withIdentifier: "gameOverSegue", sender: sender)
         } else {
+            // Reset everything for the next round and increment the round counter
             if timer.isValid {
                 timer.invalidate()
             }
@@ -151,28 +193,73 @@ class ViewController: UIViewController {
             president3 = workingSet.2
             president4 = workingSet.3
             
-            Field1.text = president1.name
-            Field2.text = president2.name
-            Field3.text = president3.name
-            Field4.text = president4.name
+            setFieldText()
+            hideLabelButtons()
+            
+            bottomNote.text = "Shake phone to check answers"
         }
 
     }
     
-    // Transfer score to second view controller
     
+    
+    
+    
+    
+    
+    
+    // Transfer score to second view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if selectLink == "Game Over" {
         let newView = segue.destination as! GameOver
-        
         newView.text = displayScore
-        
-        
+    } else if selectLink == "Learn More" {
+        let learnMoreView = segue.destination as! LearnMore
+        learnMoreView.learnMoreLink = learnMoreLink
+    }
     }
     
     
     
-    //// Timer
     
+    
+    
+    
+    
+    // Learn More Buttons
+    @IBAction func learnMoreOne(_ sender: Any) {
+        learnMoreLink = president1.learnMore
+        selectLink = "Learn More"
+        self.performSegue(withIdentifier: "labelOneSegue", sender: sender)
+    }
+    
+    @IBAction func learnMoreTwo(_ sender: Any) {
+        learnMoreLink = president2.learnMore
+        selectLink = "Learn More"
+        self.performSegue(withIdentifier: "labelTwoSegue", sender: sender)
+    }
+    
+    @IBAction func learnMoreThree(_ sender: Any) {
+        learnMoreLink = president3.learnMore
+        selectLink = "Learn More"
+        self.performSegue(withIdentifier: "labelThreeSegue", sender: sender)
+    }
+    
+    @IBAction func learnMoreFour(_ sender: Any) {
+        learnMoreLink = president4.learnMore
+        selectLink = "Learn More"
+        self.performSegue(withIdentifier: "labelFourSegue", sender: sender)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // Timer
     var timer = Timer()
     var time = 60
     func decreaseTimer() {

@@ -6,15 +6,17 @@
 //  Copyright © 2017 GoldenTrophy. All rights reserved.
 //
 
+// This view is never actually dismissed. The "Play Again" button uses IB connections to segue directly back to ViewController
+
 import UIKit
 class GameOver: UIViewController {
-    var text: String = ""
+    var text: String = "" // This creates a variable that will then be modified by the nextRound function in ViewController
     @IBOutlet weak var finalScore: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        finalScore.text = text
+        finalScore.text = text // This displays the final score after six rounds. The variable is set by the nextRound function in ViewController
     }
     
 
